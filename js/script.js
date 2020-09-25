@@ -15,9 +15,9 @@ function newItem () {
   // 2. Crossing out an item from the list of items:
   function crossOut() {
    li.classList.toggle("strike");
- }
+  }
 
- li.addEventListener("dblclick",crossOut);
+  li.addEventListener("dblclick",crossOut);
 
   function crossOut() {
     li.toggleClass('strike');
@@ -26,8 +26,11 @@ function newItem () {
   li.on("dbclick", function crossOut() {
     li.toggleClass('strike');
   })
-  
+
   // 3. Adding the delete button "X":
+  let crossOutButton = $('<crossOutButton></crossOutButton>');
+  crossOutButton.append(document.createTextNode("X"));
+  li.append(crossOutButton);
 
 
   // 4. Adding CLASS DELETE (DISPLAY: NONE) from the css:
