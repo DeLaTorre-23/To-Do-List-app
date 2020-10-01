@@ -1,5 +1,4 @@
-function newItem () {
-
+function newItem() {
   //jQuery
   // 1. Adding a new item to the list of items:
   let li = $('<li></li>');
@@ -7,7 +6,7 @@ function newItem () {
   li.append(inputValue);
 
   if (inputValue === '') {
-    alert("You must write something");
+    alert('You must write something');
   } else {
     $('#list').append(li);
   }
@@ -17,21 +16,21 @@ function newItem () {
     li.toggleClass('strike');
   }
 
-  li.on("dbclick", function crossOut() {
+  li.on('dbclick', function crossOut() {
     li.toggleClass('strike');
   });
 
   // 3. Adding the delete button "X":
   let crossOutButton = $('<crossOutButton></crossOutButton>');
-  crossOutButton.append("X");
+  crossOutButton.append('X');
   li.append(crossOutButton);
 
   // 4. Adding CLASS DELETE (DISPLAY: NONE) from the css:
-  crossOutButton.on("click", deleteListItem);
+  crossOutButton.on('click', deleteListItem);
   function deleteListItem() {
-    li.addClass("delete")
+    li.addClass('delete');
   }
 
-   // 5. Reordering the items:
-   $('#list').sortable();
+  // 5. Reordering the items:
+  $('#list').sortable();
 }
